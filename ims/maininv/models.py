@@ -13,5 +13,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp when the product was created
     updated_at = models.DateTimeField(auto_now=True)  # Timestamp when the product was last updated
 
+    # String representation of the product
     def __str__(self):
-        return self.product_name
+        return f"ID: {self.id} Product Name: {self.product_name}, Price: $ {self.cost_price}"
+
