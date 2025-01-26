@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from authApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin site
-    path('', include('form_app.urls')),  # Set form_app as the root URL (homepage)
+    path('', include('authApp.urls')),  # Set authApp as the root URL (homepage)
+    path("accounts/login/", views.login_view, name="login"),  # Login page
+    path("accounts/logout/", views.logout_view, name="logout"),  # Logout page
+    path("accounts/register/", views.register_view, name="register"),  # Register page
+    path('form_app/', include('form_app.urls')),  # Set form_app as the root URL (form_app)
     path('maininv/', include('maininv.urls')),  # maininv app at /maininv/
     path('inventory/', include('inventory.urls')),  # inventory app at /inventory/
 ]

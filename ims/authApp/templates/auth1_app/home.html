@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/authApp_styles.css' %}">
+</head>
+
+<body>
+    <header class="container">
+        <h1>Home</h1>
+    </header>
+    <main class="container">
+        <p class="text-greet">Welcome, {{request.user.username}} </p>
+        <a href="{% url 'protected' %}">Go to your protected page ! </a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2025 Maz</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles/authApp_styles.css' %}">
+    {% comment %} Style for error in red color {% endcomment %}
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <h1>Login</h1>
+    </header>
+    <main class="container">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {% comment %} Hidden input {% endcomment %}
+            <input type="hidden" name="next" value="{{next}}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        {% comment %} Checking for any error messages {% endcomment %}
+        {% if error %}
+        <p class="error">{{error}}</p>
+        {% endif %}
+
+        {% comment %} Register if no account {% endcomment %}
+        <p>Don't have an account? <a href="{% url 'register' %}">Register Here</a></p>
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2025 Maz</p>
+    </footer>
+</body>
+
+</html>
