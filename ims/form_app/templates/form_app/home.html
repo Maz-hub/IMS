@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+
+<body>
+    <h1 class="home">Forms</h1>
+    <div class="centered-content">
+        <img src="{% static 'images/dj_email.png' %}" alt="Logo" class="img_mail">
+
+        <form action="{% url 'contact' %}" method="get">
+            <button type="submit" class="btn">Click to enter form</button>
+        </form>
+    </div>
+</body>
+
+</html>

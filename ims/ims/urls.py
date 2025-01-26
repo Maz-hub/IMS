@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include('maininv.urls')),
-    path('', include('inventory.urls')),
+    path('admin/', admin.site.urls),  # Admin site
+    path('', include('form_app.urls')),  # Set form_app as the root URL (homepage)
+    path('maininv/', include('maininv.urls')),  # maininv app at /maininv/
+    path('inventory/', include('inventory.urls')),  # inventory app at /inventory/
 ]
+

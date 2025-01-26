@@ -1,0 +1,81 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 1rem;
+    color: #333;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 9px 22px;
+    font-size: 14px;
+    height: 50px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: normal;
+    background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+    border-radius: 50px;
+    transition: color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 0 0.15rem #5ceace;
+}
+
+
+.img_mail {
+    max-height: 50%;
+    max-width: 20%;
+}
+
+.home {
+    color: #0948d0;
+}
+
+/* HomePage */
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.success-link {
+    color: #0074e4;
+    text-decoration: none;
+
+}
